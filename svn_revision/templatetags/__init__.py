@@ -9,7 +9,7 @@ def get_revision():
     try:
         path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "../../")
         outS = check_output([ 'svnversion', path ])
-        m = re.match('(\d+:?\d*[MS])$', outS)
+        m = re.match('(\d+:?\d*[MS]?)$', outS)
         if m and m.group(1):
             result = 'r' + m.group(1)
         else:
